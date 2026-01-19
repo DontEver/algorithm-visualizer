@@ -1,13 +1,121 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-US" class="no-js">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Algorithm Visualizer</title>
+    <title>Algorithm Visualizer | Xinci Ma</title>
+
+    <!-- Minimal Mistakes CSS from your main site -->
+    <link rel="stylesheet" href="https://xinci.me/assets/css/main.css" />
+
+    <!-- FontAwesome (matches your Jekyll site) -->
+    <link
+      rel="preload"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"
+      />
+    </noscript>
+
+    <script>
+      document.documentElement.className =
+        document.documentElement.className.replace(/\bno-js\b/g, "") + " js ";
+    </script>
   </head>
-  <body>
-    <div id="root"></div>
+
+  <body class="layout--single" dir="ltr">
+    <nav class="skip-links">
+      <ul>
+        <li>
+          <a href="#site-nav" class="screen-reader-shortcut"
+            >Skip to primary navigation</a
+          >
+        </li>
+        <li>
+          <a href="#main" class="screen-reader-shortcut">Skip to content</a>
+        </li>
+        <li>
+          <a href="#footer" class="screen-reader-shortcut">Skip to footer</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Top nav (Minimal Mistakes style) -->
+    <div class="masthead">
+      <div class="masthead__inner-wrap">
+        <div class="masthead__menu">
+          <nav id="site-nav" class="greedy-nav">
+            <a class="site-title" href="https://xinci.me/">
+              Xinci Ma's Personal Site
+              <span class="site-subtitle"
+                >Exploring Engineering, Computer Science, and Beyond</span
+              >
+            </a>
+
+            <ul class="visible-links">
+              <li class="masthead__menu-item">
+                <a href="https://xinci.me/projects/">Projects</a>
+              </li>
+              <li class="masthead__menu-item">
+                <a href="https://algorithm.xinci.me/">Algorithm Visualizer</a>
+              </li>
+              <li class="masthead__menu-item">
+                <a href="https://xinci.me/">Back to xinci.me</a>
+              </li>
+            </ul>
+
+            <button class="greedy-nav__toggle hidden" type="button">
+              <span class="visually-hidden">Toggle menu</span>
+              <div class="navicon"></div>
+            </button>
+            <ul class="hidden-links hidden"></ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <div class="initial-content">
+      <div id="main" role="main">
+        <article class="page">
+          <div class="page__inner-wrap">
+            <header>
+              <h1 class="page__title">Algorithm Visualizer</h1>
+            </header>
+
+            <section class="page__content" itemprop="text">
+              <!-- React mounts here -->
+              <div id="root"></div>
+            </section>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <div class="page__footer-copyright">
+          © 2026 <a href="https://xinci.me">Xinci Ma</a>.
+        </div>
+      </footer>
+    </div>
+
+    <!-- Optional: Minimal Mistakes JS (for greedy-nav behavior) -->
+    <script src="https://xinci.me/assets/js/main.min.js"></script>
+
+    <!-- Keep Vite entry -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
