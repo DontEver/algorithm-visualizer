@@ -1045,63 +1045,50 @@ function App() {
   const [activeTab, setActiveTab] = useState("sorting");
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-6">
-      <header className="page__header" style={{ marginBottom: "1rem" }}>
-        <h1 className="page__title" style={{ marginBottom: "0.25rem" }}>
+    <div className="min-h-screen bg-slate-950 text-white p-6">
+      <div className="max-w-6xl mx-auto">
+        <h1 className="text-3xl font-bold text-center mb-2">
           Algorithm Visualizer
         </h1>
-        <p className="page__lead" style={{ margin: 0 }}>
+        <p className="text-slate-400 text-center mb-6">
           Interactive visualization of sorting and pathfinding algorithms
         </p>
 
-        <p style={{ marginTop: "0.75rem" }}>
-          <a href="https://xinci.me/" className="btn btn--primary">
-            ← Back to xinci.me
-          </a>
-        </p>
-      </header>
+        <div className="flex justify-center gap-4 mb-6">
+          <button
+            onClick={() => setActiveTab("sorting")}
+            className={`px-6 py-2 rounded-lg font-medium transition-all ${
+              activeTab === "sorting"
+                ? "bg-indigo-600 text-white"
+                : "bg-slate-800 text-slate-300 hover:bg-slate-700"
+            }`}
+          >
+            Sorting Algorithms
+          </button>
+          <button
+            onClick={() => setActiveTab("pathfinding")}
+            className={`px-6 py-2 rounded-lg font-medium transition-all ${
+              activeTab === "pathfinding"
+                ? "bg-indigo-600 text-white"
+                : "bg-slate-800 text-slate-300 hover:bg-slate-700"
+            }`}
+          >
+            Pathfinding Algorithms
+          </button>
+        </div>
 
-      <div
-        style={{
-          display: "flex",
-          gap: "0.75rem",
-          flexWrap: "wrap",
-          marginBottom: "1rem",
-        }}
-      >
-        <button
-          onClick={() => setActiveTab("sorting")}
-          className={`btn ${activeTab === "sorting" ? "btn--primary" : "btn--inverse"}`}
-          type="button"
-        >
-          Sorting Algorithms
-        </button>
-
-        <button
-          onClick={() => setActiveTab("pathfinding")}
-          className={`btn ${activeTab === "pathfinding" ? "btn--primary" : "btn--inverse"}`}
-          type="button"
-        >
-          Pathfinding Algorithms
-        </button>
-      </div>
-
-      <section className="page__content" itemProp="text">
-        <div
-          className="notice--primary"
-          style={{ padding: "1.25rem", borderRadius: "0.75rem" }}
-        >
+        <div className="bg-slate-800 rounded-xl p-6">
           {activeTab === "sorting" ? (
             <SortingVisualizer />
           ) : (
             <PathfindingVisualizer />
           )}
         </div>
-      </section>
 
-      <footer className="page__meta" style={{ marginTop: "1.25rem" }}>
-        <p style={{ margin: 0 }}>Built by Xinci Ma • React</p>
-      </footer>
+        <footer className="mt-6 text-center text-slate-500 text-sm">
+          Built by Xinci Ma • React + TypeScript
+        </footer>
+      </div>
     </div>
   );
 }
